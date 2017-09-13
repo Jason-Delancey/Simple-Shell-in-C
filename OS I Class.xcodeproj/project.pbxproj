@@ -41,7 +41,7 @@
 		B18715551F694AB100B7D468 = {
 			isa = PBXGroup;
 			children = (
-				B18715601F694AB100B7D468 /* OS I Class */,
+				B18715601F694AB100B7D468 /* OS_I_Class */,
 				B187155F1F694AB100B7D468 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B18715601F694AB100B7D468 /* OS I Class */ = {
+		B18715601F694AB100B7D468 /* OS_I_Class */ = {
 			isa = PBXGroup;
 			children = (
 				B18715611F694AB100B7D468 /* main.c */,
 			);
-			path = "OS I Class";
+			path = OS_I_Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +248,7 @@
 				B18715671F694AB100B7D468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
