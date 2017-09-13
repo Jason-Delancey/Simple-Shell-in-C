@@ -9,8 +9,10 @@
 
 int main(int argc, const char * argv[])
 {
-    puts("Just another");
-    puts("...string.");
+    printf("Hello\n");
+    printf("My name is \"Blorf\"\n");
+    // puts("Just another");
+    // puts("...string.");
     return(0);
 }
 
