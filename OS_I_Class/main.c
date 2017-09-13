@@ -5,6 +5,15 @@
 //  Created by CloudStrife on 9/13/17.
 //  Copyright © 2017 CloudStrife. All rights reserved.
 //
+#include <stdio.h>
+
+int main(int argc, const char * argv[])
+{
+    puts("Just another");
+    puts("...string.");
+    return(0);
+}
+
 /*
 #include <stdio.h>
 
