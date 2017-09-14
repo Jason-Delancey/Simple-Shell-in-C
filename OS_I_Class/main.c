@@ -9,14 +9,19 @@
 
 int main(int argc, const char * argv[])
 {
-    printf("Hello\n");
-    printf("My name is \"Blorf\"\n");
+    /* using a place holder to output an integer */
+    printf("Everyone knows 2+2 = %d\n",2+2);
+    
+    /* using an escape character to include brackets inside brackets */
+    //printf("My name is \"Jason\"\n");
+    
     // puts("Just another");
     // puts("...string.");
     return(0);
 }
 
 /*
+ Default code inserted when creating a new source file
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
