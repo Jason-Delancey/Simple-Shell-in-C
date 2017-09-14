@@ -7,11 +7,15 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main(int argc, const char * argv[])
 {
-    /* create random generator */
-    
+    /* creating random generator */
+    int r;
+    srand ((unsigned)time(NULL));
+    r = rand();
+    printf("This is a pseudo random number: %d\n",r);
     
     /* using a place holder to output an integer */
     //printf("Everyone knows 2+2 = %d\n",2+2);
