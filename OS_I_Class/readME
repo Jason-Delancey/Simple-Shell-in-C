@@ -36,11 +36,14 @@ Float
 Double
 Long
 Short
-Signed
-Unsigned
+Signed can represent both positive and negative
+Unsigned can only represent positive
 Stream output is buffered. The cpu waits until the buffer is flushed/the program closes.
 Pointers
 Ex: &a is used to reference the address space for variable a
+
+Using Xcode preferences:
+Use CMD+I to edit Instruments and add profilers to test run time
 
 Using Git on Xcode:
 When committing on your local repository, select the ‘flat’ option to view a side by side pane of your commit changes.

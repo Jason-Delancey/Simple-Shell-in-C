@@ -11,20 +11,22 @@
 
 int main(int argc, const char * argv[])
 {
-    /* creating random generator */
+    
+    
+    /* creating random generator
     int r;
     srand ((unsigned)time(NULL));
     r = rand();
-    printf("This is a pseudo random number: %d\n",r);
+    printf("This is a pseudo random number: %d\n",r);*/
     
-    /* using a place holder to output an integer */
-    //printf("Everyone knows 2+2 = %d\n",2+2);
+    /* using a place holder to output an integer
+    printf("Everyone knows 2+2 = %d\n",2+2);*/
     
-    /* using an escape character to include brackets inside brackets */
-    //printf("My name is \"Jason\"\n");
+    /* using an escape character to include brackets inside brackets
+    printf("My name is \"Jason\"\n");*/
     
-    // puts("Just another");
-    // puts("...string.");
+    /* puts("Just another");
+    puts("...string.");*/
     return(0);
 }
 
