@@ -39,11 +39,22 @@ Short
 Signed can represent both positive and negative
 Unsigned can only represent positive
 Stream output is buffered. The cpu waits until the buffer is flushed/the program closes.
+C conditionals
+Semi colons go after the statements, not the condition
+If, else, else if
+While
+For
+Switch
+You can use the break; statement to exit a loop
+Modulus operator (%) calculates the remainder of an operation
 Pointers
 Ex: &a is used to reference the address space for variable a
 
 Using Xcode preferences:
 Use CMD+I to edit Instruments and add profilers to test run time
+Version editor lets you compare current edits with previous commits
+Assistant editor lets you view function calls
+You can also use the icon on the top left corner of the current program window (it looks like a square with 4 smaller squares in it). It will give a quick menu with a list of function calls used in your code.
 
 Using Git on Xcode:
 When committing on your local repository, select the ‘flat’ option to view a side by side pane of your commit changes.
