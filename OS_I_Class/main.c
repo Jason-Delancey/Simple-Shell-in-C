@@ -6,11 +6,15 @@
 //  Copyright © 2017 CloudStrife. All rights reserved.
 //
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, const char * argv[])
 {
+    /* create random generator */
+    
+    
     /* using a place holder to output an integer */
-    printf("Everyone knows 2+2 = %d\n",2+2);
+    //printf("Everyone knows 2+2 = %d\n",2+2);
     
     /* using an escape character to include brackets inside brackets */
     //printf("My name is \"Jason\"\n");
