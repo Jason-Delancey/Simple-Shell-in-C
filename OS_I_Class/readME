@@ -39,6 +39,7 @@ Short
 Signed can represent both positive and negative
 Unsigned can only represent positive
 Stream output is buffered. The cpu waits until the buffer is flushed/the program closes.
+To generate pseudo random numbers, first you seed the randomizer and then subsequent calls to rand() will return a pseudo random number
 C conditionals
 Semi colons go after the statements, not the condition
 If, else, else if
@@ -47,6 +48,26 @@ For
 Switch
 You can use the break; statement to exit a loop
 Modulus operator (%) calculates the remainder of an operation
+Functions
+Declaration is: type name(arguments …)
+Functions must be prototyped/introduced before being used
+Convention is that functions are declared before main() and defined after main()
+The main function always runs first
+In C language, a function can return only one value
+Logical operators
+||
+&&
+!
+Non zero values are evaluated as true. Zero is evaluated as false
+Strings
+Strings are declared as such: char string[];
+A string or char[] should end with a null char to signal the end of the string
+You MUST provide room for the null char in the input buffer
+Constants are like universal values that don't change throughout the code
+Created by #define directive
+Generally used with ALL CAPS
+Does not end with semi colon
+Ex: #define VERSION 3
 Pointers
 Ex: &a is used to reference the address space for variable a
 
@@ -71,4 +92,8 @@ Creating a new branch is a good way of testing changes being made to a parent br
 it is good practice to do all of your development on a branch other than the master branch
 
 
+How to use Git with Xcode 9:
 https://www.raywenderlich.com/153084/use-git-source-control-xcode-9
+
+Reference for C/C++ API:
+http://www.cplusplus.com/reference/cstdio/printf/

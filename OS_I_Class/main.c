@@ -9,8 +9,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+// void evaluate(int aNumber);
+
 int main(int argc, const char * argv[])
 {
+    /* used for testing the protoptype function evaluate()
+    evaluate(10);*/
     
     /* ouutput values 10-1
      int x;
@@ -51,6 +56,16 @@ int main(int argc, const char * argv[])
     
     return(0);
 }
+
+/*void evaluate(int aNumber)
+{
+    if(aNumber < 10)
+        printf("%d is less than 10\n",aNumber);
+    else if(aNumber > 10)
+        printf("%d is greater than 10\n",aNumber);
+    else
+        printf("%d is equal to 10\n",aNumber);
+}*/
 
 /*
  Default code inserted when creating a new source file
