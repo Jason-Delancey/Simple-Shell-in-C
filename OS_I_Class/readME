@@ -63,11 +63,23 @@ Strings
 Strings are declared as such: char string[];
 A string or char[] should end with a null char to signal the end of the string
 You MUST provide room for the null char in the input buffer
+Strings are not variables, they are arrays
 Constants are like universal values that don't change throughout the code
 Created by #define directive
 Generally used with ALL CAPS
 Does not end with semi colon
 Ex: #define VERSION 3
+Arrays
+Ex: int temps[array size];
+Can't change the array size after it has been declared
+The final char in all C language strings is the NULL char
+Example of a 2-dimensional array: int grid [ROWS] [COLUMNS] = {“string1” , “string2” , “string3”}
+Struct
+Declared as such: struct <record> {int account, float balance};
+Structure declaration declares the variables within the structure
+subsequent calls create instances of the struct
+Time
+Returns the number of seconds elapsed since Jan. 1 1970
 Pointers
 Ex: &a is used to reference the address space for variable a
 
