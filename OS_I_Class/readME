@@ -80,8 +80,24 @@ Structure declaration declares the variables within the structure
 subsequent calls create instances of the struct
 Time
 Returns the number of seconds elapsed since Jan. 1 1970
+Variables
+Always initialize variables before using them
+Int  - 4 bytes
+Char - 1 byte
+Float - 4 bytes
+Long - 4bytes
+Double - 8 bytes
+& operator is used for the memory location of a variable. Ex: &a
+Using this before initializing a variable will return the memory address location
 Pointers
-Ex: &a is used to reference the address space for variable a
+Pointer is a variable that holds a memory location
+They are declared using *
+Must be initialized before being used
+Ex: int *p; p = &pokey;
+Pointer variables are used with or without the * operator
+Referencing p returns the memory address
+Referencing *p returns the contents of the location
+
 
 Using Xcode preferences:
 Use CMD+I to edit Instruments and add profilers to test run time

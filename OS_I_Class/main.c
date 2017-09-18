@@ -17,7 +17,17 @@
 
 int main(int argc, const char * argv[])
 {
+    /*int pokey;
+    int *p;
     
+    pokey = 987;
+    p = &pokey;
+    
+    printf("The address of 'pokey' is %p\n", &pokey);
+    printf("The contents of 'pokey' is %d\n", pokey);
+    
+    printf("The address of 'pokey' is %p\n", p);
+    printf("The contents of 'pokey' is %d\n", *p);*/
     
     /*char sentences[ROWS][COLUMNS] = {"string1", "string2", "string3", "PINOCCHIO"};
     int x = 0;
