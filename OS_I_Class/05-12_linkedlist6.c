@@ -10,7 +10,7 @@ struct stats {
 void fill_structure(struct stats *s);
 struct stats *create(void);
 
-int main()
+/*int main()
 {
 	struct stats *first;
 	struct stats *current;
@@ -49,7 +49,7 @@ int main()
 	}
 
 	return(0);
-}
+}*/
 
 /* Fill a structure  */
 void fill_structure(struct stats *s)
