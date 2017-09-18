@@ -11,12 +11,31 @@
 
 #define ROWS 5
 #define COLUMNS 10
+#define SIZE 1024
 
 
 // void evaluate(int aNumber);
 
 int main(int argc, const char * argv[])
 {
+    
+    /*char *sto;
+    sto = (char *)malloc(sizeof(char) * SIZE);
+    
+    printf("Hello! Please type a word:\n");
+    scanf("%s",sto);
+    if (sto == NULL)
+    {
+        puts("Memory Error");
+        return(1);
+    }
+    else
+        puts(sto);*/
+    
+    /*char j = 'J';
+    char *c = &j;
+    printf("This is the contents of variable j: %c\n",*c);*/
+    
     /*int pokey;
     int *p;
     

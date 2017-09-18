@@ -64,6 +64,7 @@ Strings are declared as such: char string[];
 A string or char[] should end with a null char to signal the end of the string
 You MUST provide room for the null char in the input buffer
 Strings are not variables, they are arrays
+The ‘\0’ char belongs at the end of every string
 Constants are like universal values that don't change throughout the code
 Created by #define directive
 Generally used with ALL CAPS
@@ -97,7 +98,18 @@ Ex: int *p; p = &pokey;
 Pointer variables are used with or without the * operator
 Referencing p returns the memory address
 Referencing *p returns the contents of the location
-
+All arrays in C language are just pointers
+Array name is just a memory location. Ex: int array[] = {11, 12, 13, 14}; int *aptr = array;
+Array pointers can manipulate array elements
+Must make local variables in a function static if you want to return them after the function exits
+Storage Allocation
+malloc() function allocates memory
+calloc() function allocates memory and zero initializes it
+malloc() returns a memory location for which the allotted storage will be used
+Always check to ensure the memory allocation was successful
+Remember to call the free() function on the allocated memory when you no longer need it
+Linked List
+An array that dynamically increases in size
 
 Using Xcode preferences:
 Use CMD+I to edit Instruments and add profilers to test run time
