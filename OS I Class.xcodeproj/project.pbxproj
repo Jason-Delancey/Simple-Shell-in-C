@@ -26,6 +26,7 @@
 		B10F3A651F6A6A8E005230BD /* readME */ = {isa = PBXFileReference; lastKnownFileType = text; path = readME; sourceTree = "<group>"; };
 		B187155E1F694AB100B7D468 /* OS I Class */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OS I Class"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18715611F694AB100B7D468 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		B1A69E0A1F7295EE006D56ED /* readME2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = readME2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 			children = (
 				B18715611F694AB100B7D468 /* main.c */,
 				B10F3A651F6A6A8E005230BD /* readME */,
+				B1A69E0A1F7295EE006D56ED /* readME2 */,
 			);
 			path = OS_I_Class;
 			sourceTree = "<group>";
