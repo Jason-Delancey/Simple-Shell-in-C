@@ -16,12 +16,12 @@ int main(int argc, const char * argv[])
 {
     char *cmdLine;
     char **args;
-    int state;
+    int RUNNING,childPID;
     
     /* Run continuously and display a prompt when waiting for input. Prompt should be
      EXACTLY $ and nothing else. */
-    state = 0;
-    while(state == 0)
+    RUNNING = 1;
+    while(RUNNING)
     {
         //Print the prompt
         printf("$");
@@ -47,7 +47,7 @@ int main(int argc, const char * argv[])
         //Execute the args
         
         
-        state = 1;
+        RUNNING = 0;
     };
     
     
