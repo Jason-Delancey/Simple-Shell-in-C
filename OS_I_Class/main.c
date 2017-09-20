@@ -8,19 +8,39 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#define MAX_SIZE 1024
 
 int main(int argc, const char * argv[])
 {
+    char *cmdLine;
+    char **args;
+    int state;
+    
     /* Run continuously and display a prompt when waiting for input. Prompt should be
      EXACTLY $ and nothing else. */
-    shell_loop()
+    state = 0;
+    while(state == 0)
     {
-        //Read a line from stdin one at a time
+        //Print the prompt
+        printf("$");
+        
+        //Read a command line from stdin
+        cmdLine = (char *)malloc(sizeof(char) * MAX_SIZE);
+        fgets(cmdLine, MAX_SIZE, stdin);
+        if (cmdLine == NULL)
+        {
+            puts("Memory Error");
+            state = 1;
+        }
+        else
+        {
+            printf("You typed the command: %s\n",cmdLine);
+        }
         
         
+        state = 1;
     };
     
     
-        return(0);
+    return(0);
 }

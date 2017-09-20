@@ -19,12 +19,6 @@
 
 int main(int argc, const char * argv[])
 {
-/* Run continuously and display a prompt when waiting for input. Prompt should be
-EXACTLY $ and nothing else. */
-shell_loop()
-{
-
-};
 
 /*char *sto;
 sto = (char *)malloc(sizeof(char) * SIZE);
