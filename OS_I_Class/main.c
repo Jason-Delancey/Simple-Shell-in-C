@@ -52,29 +52,37 @@ int main(int argc, const char * argv[])
         
         if(strcmp(args[0], "exit"))
             exit(0);
-       
+        /*else
+         puts(args[1]);*/
         
-        /*Execute the command using the args
-        pid_t pid;
-        int status;
+        //Execute the command using the args
+        pid_t  pid;
+        int    status;
         
-        pid = fork();
-        if ( pid == 0 )
+        if ((pid = fork()) < 0) // fork a child process
         {
-            printf( "This is being printed from the child process\n" );
-            if(execvp(cmdLine[0], cmdLine) == -1)
-                fprintf(stderr, "Error in fork() call");
+            fprintf(stderr, "***** ERROR: forking the child process failed\n");
+            exit(1);
         }
-        else
+        else if (pid == 0) // let the child process execute
         {
-            printf( "This is being printed in the parent process:\n"
-                   " - the process identifier (pid) of the child is %d\n", pid );
-        }*/
-
-        
+            // execute the command unless it fails and returns -1
+            if (execvp(*args, args) < 0)
+            {
+                printf("***** ERROR: the exec process failed\n");
+                exit(1);
+            }
+        }
+        else // for the parent:
+        {
+            // wait for completion of child process
+            while (wait(&status) != pid)
+                ;
+        }
         RUNNING = 0;
     };
     
     
     return(0);
 }
+
