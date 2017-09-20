@@ -8,6 +8,8 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #define MAX_SIZE 1024
 
 int main(int argc, const char * argv[])
@@ -30,12 +32,19 @@ int main(int argc, const char * argv[])
         if (cmdLine == NULL)
         {
             puts("Memory Error");
-            state = 1;
+            break;
         }
-        else
+        
+        //Split a cmd line into args and store them in the args array
+        char *anArg = (char *)malloc(sizeof(char) * MAX_SIZE);
+        anArg = strtok(cmdLine, " ,.-");
+        while(anArg != NULL)
         {
-            printf("You typed the command: %s\n",cmdLine);
+            //printf("%s\n",anArg);
+            anArg = strtok(NULL, " ,.-");
         }
+        
+        //Execute the args
         
         
         state = 1;
