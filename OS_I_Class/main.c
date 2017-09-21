@@ -16,18 +16,22 @@ char *getCommandLine(char *aLine);
 char **parseCommandLine(char **arguments, char *anArgument, char *commandLine);
 void execute(char **args);
 
+char *cd(char **args, char *directory);
+void sh_exit(void);
+
 int main(int argc, const char * argv[])
 {
-    char *cmdLine = (char *)malloc(sizeof(char) * MAX_SIZE);
-    char *anArg = (char *)malloc(sizeof(char) * MAX_SIZE);
-    char **args = (char **)malloc(sizeof(anArg) * 6);
-    int RUNNING;
     
     /* Run continuously and display a prompt when waiting for input. Prompt should be
      EXACTLY $ and nothing else. */
-    RUNNING = 1;
+    int RUNNING = 1;
     while(RUNNING)
     {
+        
+        char *cmdLine = (char *)malloc(sizeof(char) * MAX_SIZE);
+        char *anArg = (char *)malloc(sizeof(char) * MAX_SIZE);
+        char **args = (char **)malloc(sizeof(anArg) * 6);
+        
         //Print the prompt
         printf("$");
         cmdLine = getCommandLine(cmdLine);
@@ -35,14 +39,30 @@ int main(int argc, const char * argv[])
         
         if(strcmp(args[0], "exit"))
             exit(0);
+        
         execute(args);
         /*else
          puts(args[1]);*/
-        RUNNING = 0;
+        free(cmdLine);
+        free(anArg);
+        free(args);
+        sh_exit();
     };
-    
-    
-    return(0);
+
+}
+
+void sh_exit(void)
+{
+    exit(0);
+}
+
+char *cd(char **args, char *directory)
+{
+    if (args[1] == NULL)
+        fprintf(stderr, "error: %s\n", "***** ERROR: Missing argument\n");
+    else
+        directory = args[1];
+    return directory;
 }
 
 char *getCommandLine(char *aLine)

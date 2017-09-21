@@ -1,0 +1,13 @@
+References:
+
+https://brennan.io/2015/01/16/write-a-shell-in-c/
+
+https://www.cs.cornell.edu/courses/cs414/2004su/homework/shell/shell.html
+
+https://stackoverflow.com/questions/28502305/writing-a-simple-shell-in-c-using-fork-execvp
+
+https://unix.stackexchange.com/questions/39153/how-to-make-tab-insert-spaces-in-pico
+
+http://www.csl.mtu.edu/cs4411.ck/www/NOTES/process/fork/exec.html
+
+http://www.cplusplus.com/reference/cstdlib/free/

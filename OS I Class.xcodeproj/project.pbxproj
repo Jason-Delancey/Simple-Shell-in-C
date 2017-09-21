@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15099411F743AB00089C35A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B15099401F743AB00089C35A /* Makefile */; };
 		B18715621F694AB100B7D468 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = B18715611F694AB100B7D468 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -23,10 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B10F3A651F6A6A8E005230BD /* readME */ = {isa = PBXFileReference; lastKnownFileType = text; path = readME; sourceTree = "<group>"; };
+		B150993D1F7439F40089C35A /* sample c code */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sample c code"; sourceTree = "<group>"; };
+		B150993E1F743A230089C35A /* notes on C language */ = {isa = PBXFileReference; lastKnownFileType = text; path = "notes on C language"; sourceTree = "<group>"; };
+		B150993F1F743A770089C35A /* shell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shell.h; sourceTree = "<group>"; };
+		B15099401F743AB00089C35A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B15099421F743B200089C35A /* references */ = {isa = PBXFileReference; lastKnownFileType = text; path = references; sourceTree = "<group>"; };
+		B15099431F743B750089C35A /* assignment problems */ = {isa = PBXFileReference; lastKnownFileType = text; path = "assignment problems"; sourceTree = "<group>"; };
 		B187155E1F694AB100B7D468 /* OS I Class */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OS I Class"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18715611F694AB100B7D468 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		B1A69E0A1F7295EE006D56ED /* readME2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = readME2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				B18715611F694AB100B7D468 /* main.c */,
-				B10F3A651F6A6A8E005230BD /* readME */,
-				B1A69E0A1F7295EE006D56ED /* readME2 */,
+				B150993D1F7439F40089C35A /* sample c code */,
+				B150993E1F743A230089C35A /* notes on C language */,
+				B150993F1F743A770089C35A /* shell.h */,
+				B15099401F743AB00089C35A /* Makefile */,
+				B15099421F743B200089C35A /* references */,
+				B15099431F743B750089C35A /* assignment problems */,
 			);
 			path = OS_I_Class;
 			sourceTree = "<group>";
@@ -123,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15099411F743AB00089C35A /* Makefile in Sources */,
 				B18715621F694AB100B7D468 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
