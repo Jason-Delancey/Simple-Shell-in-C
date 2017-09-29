@@ -45,7 +45,13 @@ int main(int argc, const char * argv[])
         /* Print the prompt, get command line, parse command line */
         printf("$");
         cmdLine = getCommandLine(cmdLine);
+        if (cmdLine == NULL)
+        {
+            fprintf(stderr, "%s\n", "***** ERROR: No command entered\n");
+            break;
+        }
         args = parseCommandLine(args, anArg, cmdLine);
+        
         /*for (int i = 0; i < MAX_ARGS; i++)
         {
             if(args[i] != NULL)
