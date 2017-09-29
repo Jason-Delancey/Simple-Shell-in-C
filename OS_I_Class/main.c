@@ -33,12 +33,14 @@ int main(int argc, const char * argv[])
         char *anArg = (char *)malloc(sizeof(char) * MAX_SIZE);
         char **args = (char **)malloc(sizeof(anArg) * MAX_ARGS);
         
-        //Print the prompt, get command line, parse command line, check for exit command
+        /* Print the prompt, get command line, parse command line */
         printf("$");
         cmdLine = getCommandLine(cmdLine);
         args = parseCommandLine(args, anArg, cmdLine);
+        /*for (int i = 0; i < MAX_ARGS; i++)
+            printf("%s\n", args[i]);*/
     
-        //execute the command
+        /* execute the command */
         free(anArg);
         free(cmdLine);
         sh_execute(args);
@@ -49,7 +51,7 @@ int main(int argc, const char * argv[])
 
 char *getCommandLine(char *aLine)
 {
-    //Read a command line from stdin and store it
+    /* Read a command line from stdin and store it */
     fgets(aLine, MAX_SIZE, stdin);
     if (aLine == NULL)
         fprintf(stderr, "%s\n", "***** ERROR: Memory Error\n"); //use perror()?
@@ -59,14 +61,13 @@ char *getCommandLine(char *aLine)
 
 char **parseCommandLine(char **args, char *anArg, char *cmdLine)
 {
-    //Split a cmd line into args and store them in the args array
+    /* Split a cmd line into args and store them in the args array */
     anArg = strtok(cmdLine, " ,.-");
     int count = 0;
     while(anArg != NULL)
     {
-        //printf("%s\n",anArg);
         args[count] = anArg;
-        //printf("%s\n",args[count]);
+        count++;
         anArg = strtok(NULL, " ,.-");
     }
     return args;
@@ -74,7 +75,7 @@ char **parseCommandLine(char **args, char *anArg, char *cmdLine)
 
 void sh_execute(char **args)
 {
-    //Execute the command using the args
+    /* Execute the command using the args */
     pid_t  pid;
     int status;
     
@@ -86,7 +87,7 @@ void sh_execute(char **args)
     }
     else if (pid == 0) // let the child process execute
     {
-        // execute the command in the child process
+        /* execute the command in the child process */
         if (execvp(*args, args) < 0)
         {
             fprintf(stderr, "%s\n", "***** ERROR: the execution process failed\n"); //use perror()?
@@ -94,14 +95,14 @@ void sh_execute(char **args)
         }
     }
     
-    //wait for child process to end
+    /* wait for child process to end */
     while (wait(&status) != pid)
         ;
 }
 
 void sh_exit(char **args)
 {
-    //free the memory allocated
+    /* free the memory allocated */
     free(args);
     exit(0);
 }
