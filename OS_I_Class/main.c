@@ -56,7 +56,7 @@ int main(int argc, const char * argv[])
         /* Exection of built-in commands */
         built_ins[0] = "exit"; built_ins[1] = "cd"; built_ins[2] = "history";
         
-        int command = -1;
+        
         /*for (int j = 0; j < sizeof(built_ins); j++)
         {
             if(strcmp(args[0], built_ins[j]) == 0)
