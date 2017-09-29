@@ -1,0 +1,139 @@
+Notes on C Language:
+
+To create programs you need a compiler, linker, and text editor
+The code you write is called source code, saved with the .c file extension
+The source code is compiled into object code, using the compiler and ends with the .o file extension and has the same name as its corresponding source code
+The linker then combines the object code with a C library file
+The end result is a program file
+The process is:
+Edit
+Compile
+Test run
+Functions are held in C libraries and defined in separate header files
+Variables are containers for values
+Types of comments: //  /**/
+Printf() function is similar to puts() except that printf() does not auto-include a newline character \n
+\n newline
+\t tab
+\’ single quote
+\” double quote
+\\
+Placeholders can be used inside strings. Some example of placeholders are:
+%d integers
+%s strings
+%f floating points
+%c single character
+%% percent sign
+You can also use variables for placeholders
+In C language, single characters are specified with single quotes when referencing them using placeholders
+Ex: ’C’
+The single quotes returns the numerical ASCII value for the letter
+Adding a 1 to ‘C’ will return the next letter in the ASCII table
+C variables
+Int
+Char
+Float
+Double
+Long
+Short
+Signed can represent both positive and negative
+Unsigned can only represent positive
+Stream output is buffered. The cpu waits until the buffer is flushed/the program closes.
+To generate pseudo random numbers, first you seed the randomizer and then subsequent calls to rand() will return a pseudo random number
+C conditionals
+Semi colons go after the statements, not the condition
+If, else, else if
+While
+For
+Switch
+You can use the break; statement to exit a loop
+Modulus operator (%) calculates the remainder of an operation
+Functions
+Declaration is: type name(arguments …)
+Functions must be prototyped/introduced before being used
+Convention is that functions are declared before main() and defined after main()
+The main function always runs first
+In C language, a function can return only one value
+Logical operators
+||
+&&
+!
+Non zero values are evaluated as true. Zero is evaluated as false
+Strings
+Strings are declared as such: char string[];
+A string or char[] should end with a null char to signal the end of the string
+You MUST provide room for the null char in the input buffer
+Strings are not variables, they are arrays
+The ‘\0’ char belongs at the end of every string
+Constants are like universal values that don't change throughout the code
+Created by #define directive
+Generally used with ALL CAPS
+Does not end with semi colon
+Ex: #define VERSION 3
+Arrays
+Ex: int temps[array size];
+Can't change the array size after it has been declared
+The final char in all C language strings is the NULL char
+Example of a 2-dimensional array: int grid [ROWS] [COLUMNS] = {“string1” , “string2” , “string3”}
+Struct
+Declared as such: struct <record> {int account, float balance};
+Structure declaration declares the variables within the structure
+subsequent calls create instances of the struct
+Time
+Returns the number of seconds elapsed since Jan. 1 1970
+Variables
+Always initialize variables before using them
+Int  - 4 bytes
+Char - 1 byte
+Float - 4 bytes
+Long - 4bytes
+Double - 8 bytes
+& operator is used for the memory location of a variable. Ex: &a
+Using this before initializing a variable will return the memory address location
+Pointers
+Pointer is a variable that holds a memory location
+They are declared using *
+Must be initialized before being used
+Ex: int *p; p = &pokey;
+Pointer variables are used with or without the * operator
+Referencing p returns the memory address
+Referencing *p returns the contents of the location
+All arrays in C language are just pointers
+Array name is just a memory location. Ex: int array[] = {11, 12, 13, 14}; int *aptr = array;
+Array pointers can manipulate array elements
+Must make local variables in a function static if you want to return them after the function exits
+Storage Allocation
+malloc() function allocates memory
+calloc() function allocates memory and zero initializes it
+malloc() returns a memory location for which the allotted storage will be used
+Always check to ensure the memory allocation was successful
+Remember to call the free() function on the allocated memory when you no longer need it
+Linked List
+An array that dynamically increases in size
+
+Using Xcode preferences:
+Use CMD+I to edit Instruments and add profilers to test run time
+Version editor lets you compare current edits with previous commits
+Assistant editor lets you view function calls
+You can also use the icon on the top left corner of the current program window (it looks like a square with 4 smaller squares in it). It will give a quick menu with a list of function calls used in your code.
+
+Using Git on Xcode:
+When committing on your local repository, select the ‘flat’ option to view a side by side pane of your commit changes.
+You can uncheck a specific change to exclude it from a commit
+You can discard changes you made via Git using the Source Control option
+If you choose to discard changes made to a file, Git will restore the last committed version of the file and only the last. And that’s actually where the limitation lies.
+This allows you to compare two revisions of the selected file and works exactly like the comparison view in the Commit window. By default, your current source file is shown on the left and the most recent revision stored in the repository – Git calls this the HEAD – is shown on the right.
+To display earlier versions from your repository, click on the clock icon at the bottom of the right pane (marked in red below) and select an earlier revision.
+Now, to revert to that file version, just click the arrow next to the change number in the comparison pane and select Discard Change. It’s that easy!
+Once you finish reverting to an earlier version, you will need to commit this “new” version of the file as the most recent.
+The hierarchy for commits is first to last, bottom to top (head). The most recent commit Is at the top
+Instead of clicking the Commit 3 Files button, click Cancel instead. Switch to the Source Control navigator and click the gear icon in the lower left corner. Select Branch from “master”….
+Creating a new branch is a good way of testing changes being made to a parent branch and being able to easily revert back to it later on.
+it is good practice to do all of your development on a branch other than the master branch
+
+
+How to use Git with Xcode 9:
+https://www.raywenderlich.com/153084/use-git-source-control-xcode-9
+
+Reference for C/C++ API:
+http://www.cplusplus.com/reference/cstdio/printf/
