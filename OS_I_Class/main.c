@@ -53,7 +53,7 @@ int main(int argc, const char * argv[])
         }*/
         
         
-        /* Check for exection of built-in commands */
+        /* Exection of built-in commands */
         built_ins[0] = "exit"; built_ins[1] = "cd"; built_ins[2] = "history";
         
         int command = -1;
