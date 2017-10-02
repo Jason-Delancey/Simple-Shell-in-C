@@ -23,6 +23,7 @@ int sh_execute(char **args);
 
 char *sh_cd(char **args, char *directory);
 int sh_exit(void);
+void sh_echo(char **args);
 
 int main(int argc, const char * argv[])
 {
@@ -42,17 +43,16 @@ int main(int argc, const char * argv[])
             break;
         }
         
-        /* Print the prompt, get command line, parse command line */
+        /* Print the prompt, get command line, parse command line, check if no command entered */
         printf("$");
         cmdLine = getCommandLine(cmdLine);
-        if (cmdLine == NULL)
+        args = parseCommandLine(args, anArg, cmdLine);
+        if (strtok(cmdLine, " ,.-\n") == NULL)
         {
             fprintf(stderr, "%s\n", "***** ERROR: No command entered\n");
             break;
         }
-        args = parseCommandLine(args, anArg, cmdLine);
-        
-        /*for (int i = 0; i < MAX_ARGS; i++)
+        /*for (int i = 0; i < MAX_ARGS; i++) //test case
         {
             if(args[i] != NULL)
                 printf("%s\n", args[i]);
@@ -60,35 +60,46 @@ int main(int argc, const char * argv[])
         
         
         /* Execution of built-in commands */
-        built_ins[0] = "exit"; built_ins[1] = "cd"; built_ins[2] = "history";
-        
-        
-        /*for (int j = 0; j < sizeof(built_ins); j++)
+        built_ins[0] = "exit"; built_ins[1] = "cd"; built_ins[2] = "history"; built_ins[3] = "echo";
+        int command = -1;
+        for (int j = 0; j < 4; j++)
         {
             if(strcmp(args[0], built_ins[j]) == 0)
                 command = j;
         }
-        
+        if (command < 0)
+        {
+            fprintf(stderr, "%s\n", "***** ERROR: Invalid command\n");
+            break;
+        }
+        //printf("You entered the command #%d: %s\n", command, built_ins[command]);
+        command++;
         switch (command)
         {
-            case '0':
+            case 1:
                 RUNNING = sh_exit();
                 break;
-            case '1':
+            case 2:
                 sh_cd(args, args[1]);
+                break;
+            case 3:
+                printf("This is history\n");
+                break;
+            case 4:
+                sh_echo(args);
                 break;
                 
             default:
-                fprintf(stderr, "%s\n", "***** ERROR: Invalid Command Entered\n");
+                fprintf(stderr, "%s\n", "***** ERROR: Can't find built-in command\n");
                 RUNNING = 0;
                 break;
-        }*/
+        }
         
         free(cmdLine);
         free(anArg);
-        free(built_ins);
         free(args);
-        RUNNING = 0;
+        free(built_ins);
+        //RUNNING = 0;
         /* execute the commands not built-in
         sh_execute(args);*/
     };
@@ -149,6 +160,17 @@ int sh_execute(char **args)
     }
     
     return 1;
+}
+
+void sh_echo(char **args)
+{
+    int i = 0;
+    while (i < MAX_ARGS)
+    {
+        printf("%s ",args[i]);
+        i++;
+    }
+    printf("\n");
 }
 
 int sh_exit(void)
