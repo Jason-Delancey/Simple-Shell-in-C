@@ -1,0 +1,60 @@
+Name: Jason Delancey
+UNI: jrd2172
+Homework 1
+Coms W4118 Fall 2017
+
+Exercise 1.4
+Keeping in mind the various definition of operating systems, consider whether the operating system should include applications such as web browsers and mail programs. Argue both that it should and that it should not, and support your answers
+->Operating systems should not include such applications but should provide additional applications. Referencing the 1998 Antitrust suit against Microsoft that was mentioned in Chapter 1 of the textbook and also mentioned in class, the above applications can be used to monopolize a market. In addition to Microsoft, Apple’s OS includes Safari as part of it’s operating system. Including the application in the OS makes troubleshooting application malfunctions cumbersome. I previously had an issue with a potentially corrupt Safari application and had to reinstall the OS using the recovery partition to fix Safari. If Safari was separate from the OS, I could have uninstalled/reinstalled the app from within the OS instead of reinstalling the whole OS. On the other hand, adding a browser in the OS allows for unique private network configurations. For example, if you recently bought new equipment (router, pc, new OS install media, printer) but you don’t have your Internet up yet because Verizon is scheduled for arrive the next day, you could install the OS on the pc, use the browser that came with it (since you have no internet and can’t download a browser) to access the router’s embedded web server via default gateway and configure the private network, access the printer’s embedded web server using the browser to configure it, and type/print your homework assignment you wrote up on the way home.
+
+Exercise 1.6
+Which of the following instructions should be privileged?
+Set value of timer
+Read the clock
+Clear memory
+Issue a trap instruction
+Turn off interrupts
+Modify entries in device-status table
+Switch from user to kernel mode
+Access I/O device
+->Answer: a, c, d, e, g, h
+
+Exercise 1.13
+The issue of resource utilization shows up in different forms in different types of operating systems. List what resources must be managed carefully in the following settings:
+Mainframe or minicomputer systems
+->Memory space, file storage systems, CPU time
+Workstation connected to servers
+->File storage systems, I/O devices, CPU time, memory space
+Mobile computers
+->Memory space, file storage systems, CPU time, I/O devices
+
+Exercise 1.19
+What is the purpose of interrupts? How does an interrupt differ from a trap? Can traps be generated intentionally by a user program? If so, for what purpose?
+->Interrupts are used to signal the occurrence of an event. Interrupts can be signaled from either hardware or software. Traps (or exceptions) are software-generated interrupts.  Traps can be generated intentionally by a user program, requesting a particular OS service be performed.
+
+Exercise 1.21
+Some computer systems do not provide a privileged mode of operation in hardware. Is it possible to construct a secure operating system for these computer systems? Give arguments both that it is and that it is not possible.
+->It is possible to construct such an OS. Instead of the abstract view displayed on page 4 of the textbook, an OS can be constructed where the system and application programs are built within the OS. Though the architecture is more volatile, there would not be a need for a kernel mode. On the other end, introducing new applications to the system may require the OS to be rewritten to include the new app. Also, new apps added to the OS makes the system prone to a malicious app that has direct access to system calls.
+
+Exercise 2.1
+What is the purpose of system calls?
+->System calls are an intermediary between the services the OS provides and the UI functions that need to use those services.
+
+Exercise 2.12
+The services and functions provided by an operating system can be divided into two main categories. Briefly describe the two categories and discuss how they differ.
+->There is one set of OS services that provide functions that are helpful to the user. Some of these functions are UI, program execution, I/O operations, file-system manipulation, communications, and error detection. There is another set of OS functions that are used more for ensuring efficient operation of the system itself. Some of these functions are resource allocation, accounting, protection and security.
+
+Exercise 2.16
+What are the advantages and disadvantages of using the same system-call interface for manipulating both files and devices?
+->Some device system calls are similar to the system calls for files like read(), write() reposition(). Many OSs combine them into one file called device structure, where system calls are used on both files and devices. An advantage is making it easier to write code for both services. On the other hand, it may be more difficult for an engineer to access a specific device feature if the API only allows this more general access to both services.
+
+Exercise 2.18
+What are the two models of interprocess communication? What are the strengths and weaknesses of the two approaches?
+->The two models of interprocess communication are the message-passing model and the shared-memory model. Message passing useful for the exchange of small amounts of data because conflicts don’t need to be avoided. It’s also easier to implement for intercomputer communication. Shared memory allows for max memory speed but since the processes are sharing memory (which is normally restricted), they are responsible for managing the shared memory space, relieving the OS of it’s management duties. The must manage the form of the data as well as ensuring that they don’t write to the same memory location simultaneously.
+
+Exercise 2.24
+Explain why Java programs running on Android systems do not use the standard Java API and virtual machine.
+->Android runs on a unique linux kernel that is modified by Google and is outside the normal distribution of Linux releases. Software engineers use the Java language to develop apps but instead of using the Java API, they must use separate Android API developed by Google. The Java class files are compiled and turned to Java bytecode and then translated into an executable that runs on Google’s Dalvik virtual machine instead of the generic JVM. Google’s Dalvik VM was designed for Android to optimize for the constraints of mobile devices (low memory and CPU power compared to desktop/laptop systems).
+
+References:
+Operating System Concepts, Essentials 2nd Edition
